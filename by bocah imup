@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For U</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    /* CONTAINER UTAMA */
+    .body {
+      position: relative;
+      height: 100vh;
+      background: linear-gradient(140deg, #87b5ff, #c2e9fb);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    /* CARD */
+    .card {
+      position: relative;
+      z-index: 5; /* PALING DEPAN */
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      max-width: 400px;
+      text-align: center;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+      animation: fadeIn 1.5s ease;
+    }
+
+    h1 {
+      color: #4a4cb6;
+      margin-bottom: 15px;
+      font-size: 32px;
+    }
+
+    .flower {
+      font-size: 90px;
+      margin: 20px 0;
+      animation: bloom 2s infinite alternate;
+    }
+
+    .from {
+      margin-top: 20px;
+      font-style: italic;
+      color: #777;
+    }
+
+    /* EMOJI TERBANG (BACKGROUND) */
+    .emoji {
+      position: absolute;
+      bottom: -10%;
+      left: calc(100% * var(--i)); /* AUTO NYEBAR */
+      font-size: 2rem;
+      animation: floatUp 10s linear infinite;
+      animation-delay: var(--delay);
+      opacity: 0;
+      z-index: 1; /* BELAKANG CARD */
+      pointer-events: none;
+      filter: blur(0.8px);
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0);
+        opacity: 0;
+      }
+      20% {
+        opacity: 0.6;
+      }
+      100% {
+        transform: translateY(-120vh);
+        opacity: 0;
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes bloom {
+      from { transform: scale(1); }
+      to   { transform: scale(1.05); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="body">
+
+    <!-- EMOJI BACKGROUND -->
+    <div class="emoji" style="--i:0.05; --delay:0s;">💐</div>
+    <div class="emoji" style="--i:0.12; --delay:1s;">💐</div>
+    <div class="emoji" style="--i:0.20; --delay:2s;">💐</div>
+    <div class="emoji" style="--i:0.28; --delay:3s;">💐</div>
+    <div class="emoji" style="--i:0.36; --delay:1.5s;">💐</div>
+    <div class="emoji" style="--i:0.44; --delay:2.5s;">💐</div>
+    <div class="emoji" style="--i:0.52; --delay:0.5s;">💐</div>
+    <div class="emoji" style="--i:0.60; --delay:3.5s;">💐</div>
+    <div class="emoji" style="--i:0.68; --delay:1s;">💐</div>
+    <div class="emoji" style="--i:0.76; --delay:2s;">💐</div>
+    <div class="emoji" style="--i:0.84; --delay:4s;">💐</div>
+    <div class="emoji" style="--i:0.92; --delay:2.8s;">💐</div>
+
+    <!-- CARD DEPAN -->
+    <div class="card">
+      <h1>Hello Friend</h1>
+      <div class="flower">💐</div>
+      <p>
+        just a little something<br>
+        hope you like it!
+      </p>
+      <div class="from">– from bocah imup</div>
+    </div>
+
+  </div>
+
+</body>
+</html>
